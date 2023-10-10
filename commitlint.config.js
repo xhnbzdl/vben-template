@@ -19,15 +19,24 @@ const scopeComplete = execSync('git status --porcelain || true')
 
 /** @type {import('cz-git').UserConfig} */
 module.exports = {
+  // ↓忽略包含 init 的提交消息
   ignores: [(commit) => commit.includes('init')],
+  // ↓按照传统消息格式来验证
   extends: ['@commitlint/config-conventional'],
+  // ↓自定义提交消息规则
   rules: {
+    // ↓ body 以空白行开头
     'body-leading-blank': [2, 'always'],
+    // ↓ footer 以空白行开头
     'footer-leading-blank': [1, 'always'],
+    // ↓ header 的最大长度
     'header-max-length': [2, 'always', 108],
+    // ↓ subject 为空
     'subject-empty': [2, 'never'],
+    // ↓ type 为空
     'type-empty': [2, 'never'],
     'subject-case': [0],
+    // ↓ type 的类型
     'type-enum': [
       2,
       'always',
