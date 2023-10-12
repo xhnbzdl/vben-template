@@ -26,9 +26,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   } = viteEnv
 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
-    // have to
     vue(),
-    // have to
     vueJsx(),
     // support name
     //vueSetupExtend(),
@@ -64,7 +62,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   // vite-plugin-theme
   vitePlugins.push(configThemePlugin(isBuild))
 
-  // The following plugins only work in the production environment
+  // 以下插件只能在生产环境中运行
   if (isBuild) {
     // vite-plugin-imagemin
     VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin())
