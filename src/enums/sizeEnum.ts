@@ -1,3 +1,4 @@
+/** antd组件中组件大小 */
 export enum SizeEnum {
   DEFAULT = 'default',
   SMALL = 'small',

@@ -1,3 +1,6 @@
+/**
+ * 基础页面路径枚举
+ */
 export enum PageEnum {
   // basic login path
   BASE_LOGIN = '/login',

@@ -1,3 +1,4 @@
+// 存在内存和Storage中的缓存的Key
 // token key
 export const TOKEN_KEY = 'TOKEN__'
 
@@ -22,6 +23,9 @@ export const APP_LOCAL_CACHE_KEY = 'COMMON__LOCAL__KEY__'
 // base global session key
 export const APP_SESSION_CACHE_KEY = 'COMMON__SESSION__KEY__'
 
+/**
+ * 缓存的类型
+ */
 export enum CacheTypeEnum {
   SESSION,
   LOCAL,

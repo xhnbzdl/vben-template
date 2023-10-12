@@ -1,23 +1,27 @@
 /**
- * @description: Exception related enumeration
+ * @description: 异常有关的枚举
  */
 export enum ExceptionEnum {
-  // page not access
+  /** 页面无权限错误 */
   PAGE_NOT_ACCESS = 403,
 
-  // page not found
+  /** 页面找不到 */
   PAGE_NOT_FOUND = 404,
 
-  // error
+  /**  服务器错误 */
   ERROR = 500,
 
-  // net work error
+  /** 前端Js错误 or 网络错误 */
   NET_WORK_ERROR = 10000,
 
-  // No data on the page. In fact, it is not an exception page
+  /** 页面上没有数据 */
   PAGE_NOT_DATA = 10100,
 }
 
+/**
+ * 错误类型枚举
+ * @description: 这些错误被存储在 LocalStorage 中
+ */
 export enum ErrorTypeEnum {
   VUE = 'vue',
   SCRIPT = 'script',
