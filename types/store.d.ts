@@ -2,26 +2,27 @@ import { ErrorTypeEnum } from '/@/enums/exceptionEnum'
 import { MenuModeEnum, MenuTypeEnum } from '/@/enums/menuEnum'
 import { RoleInfo } from '/@/api/sys/model/userModel'
 
-// Error-log information
+/** 错误日志信息 */
 export interface ErrorLogInfo {
-  // Type of error
+  /** 错误类型 */
   type: ErrorTypeEnum
-  // Error file
+  /** 错误文件 */
   file: string
-  // Error name
+  /** 错误名称 */
   name?: string
-  // Error message
+  /** 错误信息 */
   message: string
-  // Error stack
+  /** 错误堆栈 */
   stack?: string
-  // Error detail
+  /** 错误详情 */
   detail: string
-  // Error url
+  /** 错误 URL */
   url: string
-  // Error time
+  /** 出错时间 */
   time?: string
 }
 
+/** 用户信息 */
 export interface UserInfo {
   userId: string | number
   username: string
@@ -32,6 +33,7 @@ export interface UserInfo {
   roles: RoleInfo[]
 }
 
+/** 迷你状态之前 */
 export interface BeforeMiniState {
   menuCollapsed?: boolean
   menuSplit?: boolean

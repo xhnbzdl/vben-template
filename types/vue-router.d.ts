@@ -2,44 +2,47 @@ export {}
 
 declare module 'vue-router' {
   interface RouteMeta extends Record<string | number | symbol, unknown> {
+    /** 排序 */
     orderNo?: number
-    // title
+    /** 标题 */
     title: string
-    // dynamic router level.
+    /** 动态路由器级别 */
     dynamicLevel?: number
-    // dynamic router real route path (For performance).
+    /** 动态路由器真实路由路径（为提高性能） */
     realPath?: string
-    // Whether to ignore permissions
+    /** 是否忽略权限 */
     ignoreAuth?: boolean
-    // role info
+    /** 角色信息 */
     roles?: RoleEnum[]
-    // Whether not to cache
+    /** 是否缓存 */
     ignoreKeepAlive?: boolean
-    // Is it fixed on tab
+    /** 是否固定在选项卡上 */
     affix?: boolean
-    // icon on tab
+    /** 选项卡上的图标 */
     icon?: string
+    /** iframe 的 url */
     frameSrc?: string
-    // current page transition
+    /** 当前页的过渡动画配置 */
     transitionName?: string
-    // Whether the route has been dynamically added
+    /** 是否在面包屑中不显示 */
     hideBreadcrumb?: boolean
-    // Hide submenu
+    /** 是否隐藏子菜单 */
     hideChildrenInMenu?: boolean
-    // Carrying parameters
+    /** 携带参数 */
     carryParam?: boolean
-    // Used internally to mark single-level menus
+    /** 内部用于标记单层菜单 */
     single?: boolean
-    // Currently active menu
+    /** 当前活动菜单 */
     currentActiveMenu?: string
-    // Never show in tab
+    /** 是否在选项卡中不显示 */
     hideTab?: boolean
-    // Never show in menu
+    /** 不在菜单中显示 */
     hideMenu?: boolean
+    /** 是否是外链 */
     isLink?: boolean
-    // only build for Menu
+    /** 是否仅为菜单构建 */
     ignoreRoute?: boolean
-    // Hide path for children
+    /** 是否隐藏子路由 */
     hidePathForChildren?: boolean
   }
 }

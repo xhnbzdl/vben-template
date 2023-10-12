@@ -56,6 +56,7 @@ declare global {
     __: unknown
   }
 
+  /** vite 环境变量 */
   declare interface ViteEnv {
     /** 运行的端口 */
     VITE_PORT: number
