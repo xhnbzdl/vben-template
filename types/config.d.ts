@@ -26,7 +26,7 @@ export interface MenuSetting {
   siderHidden: boolean
   /**
    * 侧边菜单是否可以拖拽
-   * @description: (左侧菜单混合模式、固定展开菜单、菜单背景为白色的情况下，打开子菜单，有一个class="vben-layout-mix-sider-drag-bar"的元素，该元素就是一个背景色div)，该变量修改它的display
+   * @description: 仅限于打开左侧菜单，鼠标在菜单右侧有一个拖动条
    */
   canDrag: boolean
   /** 是否展示左侧菜单 */
@@ -51,9 +51,9 @@ export interface MenuSetting {
   topMenuAlign: 'start' | 'center' | 'end'
   /** 折叠菜单的按钮位置 */
   trigger: TriggerEnum
-  /** 侧边菜单手风琴模式，即是否一次只展开一个 */
+  /** 是否打开手风琴模式，一次只展开一个菜单 */
   accordion: boolean
-  /** 切换页面关闭菜单，暂时不太清楚这是干什么的 */
+  /** 切换页面关闭菜单 */
   closeMixSidebarOnChange: boolean
   /** 折叠菜单显示名称 */
   collapsedShowTitle: boolean
@@ -72,7 +72,7 @@ export interface MultiTabsSetting {
   show: boolean
   /** 标签页快捷按钮 */
   showQuick: boolean
-  /** 是否可拖拽 */
+  /** 是否可以拖放分类选项卡 */
   canDrag: boolean
   /** 标签页刷新按钮 */
   showRedo: boolean
@@ -120,7 +120,7 @@ export interface LocaleSetting {
  * 过渡动画设置
  */
 export interface TransitionSetting {
-  /** 是否打开页面切换动画 */
+  /** 是否打开页面切换动画，禁用状态也将禁用页面加载功能 */
   enable: boolean
   /** 路由基本切换动画 */
   basicTransition: RouterTransitionEnum
@@ -153,9 +153,9 @@ export interface ProjectConfig {
   /** 主题颜色 */
   themeColor: string
 
-  /** 主界面全屏显示，不显示菜单，顶部的 */
+  /** 主界面全屏显示，不显示菜单和选项卡 */
   fullContent: boolean
-  /** 内容宽度 */
+  /** 内容宽度模式 */
   contentMode: ContentEnum
   /** 是否显示Logo */
   showLogo: boolean
@@ -170,7 +170,7 @@ export interface ProjectConfig {
   multiTabsSetting: MultiTabsSetting
   /** 动画配置 */
   transitionSetting: TransitionSetting
-  /** 页面布局是否启用 keep-alive */
+  /** 是否启用 KeepAlive 缓存最好在开发过程中关闭，否则每次都需要清除缓存 */
   openKeepAlive: boolean
   /** 是否显示面包屑 */
   showBreadCrumb: boolean
@@ -184,7 +184,7 @@ export interface ProjectConfig {
   canEmbedIFramePage: boolean
   /** 是否删除未关闭的信息，并在切换接口时发出通知 */
   closeMessageOnSwitch: boolean
-  /** 切换接口时，是否取消已发送但未响应的 http 请求。 */
+  /** 切换接口时，是否取消已发送但未响应的 http 请求。如果启用，但是想覆盖单个接口。可以在单独的接口中设置 */
   removeAllHttpPending: boolean
 }
 
