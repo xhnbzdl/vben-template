@@ -9,5 +9,8 @@ export const cacheCipher = {
   iv: '@11111000001111_',
 }
 
-// 系统缓存是否使用 aes 加密
+/**
+ * 系统缓存是否使用 aes 加密
+ * @description: 开发模式不启用，非开发模式启用
+ */
 export const enableStorageEncryption = !isDevMode()
