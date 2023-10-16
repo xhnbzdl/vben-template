@@ -41,11 +41,19 @@ export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
   return src
 }
 
+/**
+ * 打开新的浏览器窗口或标签页，加载指定的 URL
+ * @param url 要在新窗口中加载的 URL
+ * @param opt 配置新窗口行为的参数
+ */
 export function openWindow(
   url: string,
   opt?: { target?: TargetContext | string; noopener?: boolean; noreferrer?: boolean },
 ) {
+  // 是否在新窗口中设置 rel="noopener"，如果为 true，则会设置 noopener=yes。默认值为 true
+  // 是否在新窗口中设置 rel="noreferrer"。如果为 true，则会设置 noreferrer=yes。默认值为 true。
   const { target = '__blank', noopener = true, noreferrer = true } = opt || {}
+  // 用于存储要传递给 window.open 方法的窗口特性参数
   const feature: string[] = []
 
   noopener && feature.push('noopener=yes')
