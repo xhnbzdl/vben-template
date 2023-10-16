@@ -1,6 +1,6 @@
 import { isDevMode } from '/@/utils/env'
 
-// 默认缓存时间
+/** 默认缓存时间 7天 */
 export const DEFAULT_CACHE_TIME = 60 * 60 * 24 * 7
 
 // AES 加密密钥和偏移量
