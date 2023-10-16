@@ -1,3 +1,4 @@
+// 这个组件主要是用来动态创建组件使用的
 import {
   defineAsyncComponent,
   // FunctionalComponent, CSSProperties
@@ -19,6 +20,7 @@ import { noop } from '/@/utils'
 //   );
 // };
 
+/** 动态创建组件的参数 */
 interface Options {
   size?: 'default' | 'small' | 'large'
   delay?: number
@@ -27,6 +29,13 @@ interface Options {
   retry?: boolean
 }
 
+/**
+ * 创建异步组件
+ * @param loader
+ * @param options
+ * @description: https://v3.vuejs.org/api/global-api.html#defineasynccomponent
+ * @returns
+ */
 export function createAsyncComponent(loader: Fn, options: Options = {}) {
   const { size = 'small', delay = 100, timeout = 30000, loading = false, retry = true } = options
   return defineAsyncComponent({
