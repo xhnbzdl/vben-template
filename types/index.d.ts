@@ -1,3 +1,4 @@
+/** 回调函数的接口规范（函数类型接口） */
 declare interface Fn<T = any, R = T> {
   (...arg: T[]): R
 }
