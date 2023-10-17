@@ -33,10 +33,14 @@ export interface UserInfo {
   roles: RoleInfo[]
 }
 
-/** 迷你状态之前 */
+/** 浏览器窗口缩小为迷你状态之前要保存的数据 */
 export interface BeforeMiniState {
+  /** 菜单是否折叠 */
   menuCollapsed?: boolean
+  /** 菜单是否分割 */
   menuSplit?: boolean
+  /** 菜单的显示模式 */
   menuMode?: MenuModeEnum
+  /** 菜单的布局类型 */
   menuType?: MenuTypeEnum
 }

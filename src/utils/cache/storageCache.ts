@@ -69,11 +69,13 @@ export const createStorage = ({
      * @memberof Cache
      */
     set(key: string, value: any, expire: number | null = timeout) {
+      // 包装缓存数据
       const stringData = JSON.stringify({
         value,
         time: Date.now(),
         expire: !isNullOrUnDef(expire) ? new Date().getTime() + expire * 1000 : null,
       })
+      // 如果需要加密则返回加密后的字符串数据
       const stringifyValue = this.hasEncrypt ? this.encryption.encryptByAES(stringData) : stringData
       this.storage.setItem(this.getKey(key), stringifyValue)
     }
@@ -93,6 +95,7 @@ export const createStorage = ({
         // 解密值
         const decVal = this.hasEncrypt ? this.encryption.decryptByAES(val) : val
         const data = JSON.parse(decVal)
+        // 从包装后的数据中取出缓存值 value 和过期时间 expire
         const { value, expire } = data
         // 如果没有设置过期时间，或还未到过期时间，则返回值
         if (isNullOrUnDef(expire) || expire >= new Date().getTime()) {
