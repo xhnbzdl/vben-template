@@ -30,7 +30,7 @@ export function generateAntColors(color: string, theme: GenerateTheme = 'default
 /**
  * 生成主题颜色
  * @param color 主题色的基础颜色
- * @returns
+ * @returns 浅色系列颜色和暗模式颜色合并成的 20 个颜色的数组
  */
 export function getThemeColors(color?: string) {
   const tc = color || primaryColor
