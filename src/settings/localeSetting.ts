@@ -7,7 +7,7 @@ export const LOCALE: { [key: string]: LocaleType } = {
   EN_US: 'en',
 }
 
-/** 本地化设置 */
+/** 默认的本地化设置 */
 export const localeSetting: LocaleSetting = {
   /** 展示语言切换按钮 */
   showPicker: true,
