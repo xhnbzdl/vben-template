@@ -1,5 +1,5 @@
 /**
- * 判断是否 十六进制颜色值.
+ * 判断字符串是是否为十六进制颜色值.
  * 输入形式可为 #fff000 #f00
  *
  * @param   String  color   十六进制颜色值
@@ -26,9 +26,9 @@ export function rgbToHex(r: number, g: number, b: number) {
 }
 
 /**
- * Transform a HEX color to its RGB representation
- * @param {string} hex The color to transform
- * @returns The RGB representation of the passed color
+ * 十六进制颜色值 转换为 RGB 颜色值
+ * @param {string} hex 十六进制 要转换的颜色
+ * @returns 传入颜色的 RGB 表示
  */
 export function hexToRGB(hex: string) {
   let sHex = hex.toLowerCase()
@@ -59,10 +59,10 @@ export function colorIsDark(color: string) {
 }
 
 /**
- * Darkens a HEX color given the passed percentage
- * @param {string} color The color to process
- * @param {number} amount The amount to change the color by
- * @returns {string} The HEX representation of the processed color
+ * 根据通过的百分比使 十六进制 颜色变暗
+ * @param {string} color 要处理的颜色
+ * @param {number} amount 颜色的变化量
+ * @returns {string} 处理过的颜色的 十六进制 表示
  */
 export function darken(color: string, amount: number) {
   color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color
@@ -74,10 +74,10 @@ export function darken(color: string, amount: number) {
 }
 
 /**
- * Lightens a 6 char HEX color according to the passed percentage
- * @param {string} color The color to change
- * @param {number} amount The amount to change the color by
- * @returns {string} The processed color represented as HEX
+ * 根据传递的百分比淡化 6 字符 十六进制 颜色
+ * @param {string} color 要更改的颜色
+ * @param {number} amount 颜色的变化量
+ * @returns {string} 处理过的颜色的 十六进制 表示
  */
 export function lighten(color: string, amount: number) {
   color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color
@@ -88,12 +88,12 @@ export function lighten(color: string, amount: number) {
   )}${addLight(color.substring(4, 6), amount)}`
 }
 
-/* Suma el porcentaje indicado a un color (RR, GG o BB) hexadecimal para aclararlo */
+/* 将指定的百分比添加到颜色（RR、GG 或 BB）十六进制中，使其变亮。 */
 /**
- * Sums the passed percentage to the R, G or B of a HEX color
- * @param {string} color The color to change
- * @param {number} amount The amount to change the color by
- * @returns {string} The processed part of the color
+ * 将传递的百分比与 十六进制 颜色的 R、G 或 B 相加
+ * @param {string} color 要更改的颜色
+ * @param {number} amount 颜色的变化量
+ * @returns {string} 颜色的处理部分
  */
 function addLight(color: string, amount: number) {
   const cc = parseInt(color, 16) + amount
@@ -102,7 +102,7 @@ function addLight(color: string, amount: number) {
 }
 
 /**
- * Calculates luminance of an rgb color
+ * 计算 rgb 颜色的亮度
  * @param {number} r red
  * @param {number} g green
  * @param {number} b blue
@@ -116,7 +116,7 @@ function luminanace(r: number, g: number, b: number) {
 }
 
 /**
- * Calculates contrast between two rgb colors
+ * 计算两种 rgb 颜色之间的对比度
  * @param {string} rgb1 rgb color 1
  * @param {string} rgb2 rgb color 2
  */
@@ -128,8 +128,8 @@ function contrast(rgb1: string[], rgb2: number[]) {
 }
 
 /**
- * Determines what the best text color is (black or white) based con the contrast with the background
- * @param hexColor - Last selected color by the user
+ * 根据与背景的对比度确定最佳文字颜色（黑色或白色）
+ * @param hexColor - 用户最后选择的颜色
  */
 export function calculateBestTextColor(hexColor: string) {
   const rgbColor = hexToRGB(hexColor.substring(1))
@@ -139,10 +139,10 @@ export function calculateBestTextColor(hexColor: string) {
 }
 
 /**
- * Subtracts the indicated percentage to the R, G or B of a HEX color
- * @param {string} color The color to change
- * @param {number} amount The amount to change the color by
- * @returns {string} The processed part of the color
+ * 从 十六进制 颜色的 R、G 或 B 中减去指定的百分比
+ * @param {string} color 要改变的颜色
+ * @param {number} amount 改变颜色的幅度
+ * @returns {string} 颜色的处理部分
  */
 function subtractLight(color: string, amount: number) {
   const cc = parseInt(color, 16) - amount
