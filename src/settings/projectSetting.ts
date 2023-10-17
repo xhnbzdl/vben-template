@@ -12,7 +12,10 @@ import {
 import { SIDE_BAR_BG_COLOR_LIST, HEADER_PRESET_BG_COLOR_LIST } from './designSetting'
 import { primaryColor } from '../../build/config/themeConfig'
 
-// ! 更改后需要清除浏览器缓存
+/**
+ * 默认的项目配置
+ * @description: 更改后需要清除浏览器缓存
+ */
 const setting: ProjectConfig = {
   showSettingButton: true,
 

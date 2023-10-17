@@ -42,7 +42,9 @@ declare global {
   declare type DeepPartial<T> = {
     [P in keyof T]?: DeepPartial<T[P]>
   }
+  /** 计时器标识的类型。这个标识可以用于清除计时器 */
   declare type TimeoutHandle = ReturnType<typeof setTimeout>
+  /** 定时器标识的类型。这个标识可以用于清除定时器 */
   declare type IntervalHandle = ReturnType<typeof setInterval>
 
   declare interface ChangeEvent extends Event {
