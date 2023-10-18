@@ -3,6 +3,7 @@ import type { AppRouteModule } from '/@/router/types'
 import { LAYOUT } from '/@/router/constant'
 import { t } from '/@/hooks/web/useI18n'
 
+/** 引导页路由 */
 const setup: AppRouteModule = {
   path: '/setup',
   name: 'SetupDemo',

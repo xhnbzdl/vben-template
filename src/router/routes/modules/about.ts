@@ -3,6 +3,7 @@ import type { AppRouteModule } from '/@/router/types'
 import { LAYOUT } from '/@/router/constant'
 import { t } from '/@/hooks/web/useI18n'
 
+/** 关于页路由定义 */
 const about: AppRouteModule = {
   path: '/about',
   name: 'About',
